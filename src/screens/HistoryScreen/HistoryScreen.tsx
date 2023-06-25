@@ -1,11 +1,23 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {FlatList} from 'react-native';
+import TextMedium from '../../components/atoms/text-medium/TextMedium';
+import ScreenLayout from '../../components/organisms/screen-layout/ScreenLayout';
+import {useAppSelector} from '../../hooks/hooks';
 
 const HistoryScreen: React.FunctionComponent = () => {
+  const {
+    qrCodes: {qrCodeList},
+  } = useAppSelector(state => state);
+
   return (
-    <View>
-      <Text>HistoryScreen</Text>
-    </View>
+    <ScreenLayout title={'Scan History'}>
+      <FlatList
+        data={qrCodeList}
+        renderItem={item => {
+          return <TextMedium>{item.item.qrCode}</TextMedium>;
+        }}
+      />
+    </ScreenLayout>
   );
 };
 
