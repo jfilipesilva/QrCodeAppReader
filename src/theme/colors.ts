@@ -7,4 +7,7 @@ export const colors = {
   // BACKGROUND
   BG_WHITE: '#ffffff',
   BG_PRIMARY: '#94D600',
+
+  // Border
+  BORDER_GREY: '#0000001f',
 };
