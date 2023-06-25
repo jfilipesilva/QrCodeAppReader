@@ -8,9 +8,7 @@ import {colors} from '../../theme/colors';
 import styles from './HistoryScreen.style';
 
 const HistoryScreen: React.FunctionComponent = () => {
-  const {
-    qrCodes: {qrCodeList},
-  } = useAppSelector(state => state);
+  const {qrCodeList} = useAppSelector(state => state.qrCodes);
 
   return (
     <ScreenLayout title={'Scan History'}>
