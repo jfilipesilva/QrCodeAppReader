@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height * 0.6,
     width: Dimensions.get('window').width * 0.9,
     borderRadius: 50,
-    backgroundColor: 'red',
     overflow: 'hidden',
     alignSelf: 'center',
     justifyContent: 'center',

@@ -1,7 +1,7 @@
 import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 
-export type TitleProps = {
+export type BodyTextProps = {
   textStyle?: StyleProp<TextStyle>;
-  titleContainerStyle?: StyleProp<ViewStyle>;
+  bodyTextContainerStyle?: StyleProp<ViewStyle>;
   children?: string;
 };

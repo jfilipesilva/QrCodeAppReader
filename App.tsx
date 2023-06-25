@@ -8,16 +8,18 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
-
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import MainBottomTabs from './src/navigation/MainBottomTabs';
 
 const App: React.FunctionComponent = () => {
   return (
-    <SafeAreaView style={styles.backgroundStyle}>
-      <NavigationContainer>
-        <MainBottomTabs />
-      </NavigationContainer>
-    </SafeAreaView>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaView style={styles.backgroundStyle}>
+        <NavigationContainer>
+          <MainBottomTabs />
+        </NavigationContainer>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 

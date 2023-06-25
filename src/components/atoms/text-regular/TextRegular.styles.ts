@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {colors} from '../../../theme/colors';
 
 export const styles = StyleSheet.create({
   text: {
-    color: Colors.TEXT_DARK,
+    color: colors.TEXT_DARK,
   },
 });

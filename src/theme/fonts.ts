@@ -20,12 +20,13 @@ export const fontStyle = StyleSheet.create({
     fontSize: 25,
   },
   button: {
-    fontSize: 16,
+    fontSize: 20,
+    lineHeight: 23,
   },
   body: {
-    fontSize: 16,
+    fontSize: 20,
   },
   caption: {
-    fontSize: 13,
+    fontSize: 15,
   },
 });

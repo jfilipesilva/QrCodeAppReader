@@ -3,10 +3,11 @@ import {fontStyle} from '../../../theme/fonts';
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    marginTop: 20,
-    marginBottom: 10,
+    flex: 1,
+    marginTop: 10,
+    marginBottom: 5,
   },
-  title: {
-    ...fontStyle.title,
+  bodyText: {
+    ...fontStyle.body,
   },
 });
