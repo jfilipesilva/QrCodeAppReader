@@ -19,6 +19,11 @@ const styles = StyleSheet.create({
   listItemIcon: {
     flex: 1,
   },
+  emptyListText: {
+    color: colors.TEXT_GREY,
+    textAlign: 'center',
+    marginTop: 20,
+  },
 });
 
 export default styles;

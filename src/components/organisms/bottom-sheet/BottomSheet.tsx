@@ -1,5 +1,5 @@
 import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
-import React, {useCallback, useMemo} from 'react';
+import React, {useMemo} from 'react';
 import {View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -12,10 +12,6 @@ const BottomSheet: React.FunctionComponent<BottomSheetProps> = props => {
   // variables
   const snapPoints = useMemo(() => ['40%', '60%', '80%'], []);
 
-  const handleSheetChanges = useCallback((index: number) => {
-    console.log('handleSheetChanges', index);
-  }, []);
-
   const insets = useSafeAreaInsets();
 
   // renders
@@ -26,8 +22,7 @@ const BottomSheet: React.FunctionComponent<BottomSheetProps> = props => {
         index={1}
         snapPoints={snapPoints}
         style={{padding: 20}}
-        onDismiss={onCLose}
-        onChange={handleSheetChanges}>
+        onDismiss={onCLose}>
         <ScrollView bounces={false}>
           <View
             style={[
