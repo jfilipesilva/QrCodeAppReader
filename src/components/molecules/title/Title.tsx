@@ -7,7 +7,7 @@ import {TitleProps} from './Title.types';
 const Title: React.FunctionComponent<TitleProps> = props => {
   const {textStyle, titleContainerStyle} = props;
   return (
-    <View style={titleContainerStyle}>
+    <View style={[styles.mainContainer, titleContainerStyle]}>
       <TextBold style={[styles.title, textStyle]}>{props.children}</TextBold>
     </View>
   );

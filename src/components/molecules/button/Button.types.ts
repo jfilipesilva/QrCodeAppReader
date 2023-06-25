@@ -1,7 +1,8 @@
 import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 
-export type TitleProps = {
+export type ButtonProps = {
   textStyle?: StyleProp<TextStyle>;
-  titleContainerStyle?: StyleProp<ViewStyle>;
+  buttonContainerStyle?: StyleProp<ViewStyle>;
   children?: string;
+  onPress?: () => void;
 };
