@@ -1,6 +1,7 @@
 import {BottomSheetModal} from '@gorhom/bottom-sheet';
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useRef, useState} from 'react';
-import {Linking, View} from 'react-native';
+import {Alert, Linking, View} from 'react-native';
 import {
   Camera,
   CameraPermissionStatus,
@@ -12,6 +13,8 @@ import Button from '../../components/molecules/button/Button';
 import Title from '../../components/molecules/title/Title';
 import BottomSheet from '../../components/organisms/bottom-sheet/BottomSheet';
 import ScreenLayout from '../../components/organisms/screen-layout/ScreenLayout';
+import {useAppDispatch} from '../../hooks/hooks';
+import {qrCodesSlice} from '../../store/slices/qr-codes';
 import styles from './HomeScreen.style';
 
 const HomeScreen: React.FunctionComponent = () => {
@@ -24,18 +27,25 @@ const HomeScreen: React.FunctionComponent = () => {
     checkInverted: true,
   });
 
+  const dispatch = useAppDispatch();
+
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+  const navigation = useNavigation();
 
   useEffect(() => {
-    console.log('Requesting camera permission...');
     Camera.requestCameraPermission().then(async permission => {
-      console.log(`Camera permission status: ${permission}`);
-
       if (permission === 'denied') {
         await Linking.openSettings();
       }
       setCameraPermissionStatus(permission);
     });
+    navigation.addListener('focus', () => {
+      setIsCameraActive(true);
+    });
+    navigation.addListener('blur', () => {
+      setIsCameraActive(false);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -50,6 +60,14 @@ const HomeScreen: React.FunctionComponent = () => {
   const device = devices.back;
 
   const onPressButton = () => {
+    if (scannedData) {
+      dispatch(
+        qrCodesSlice.actions.addQrCode({
+          qrCode: scannedData,
+          date: new Date().toLocaleDateString('pt-PT'),
+        }),
+      );
+    }
     bottomSheetModalRef.current?.dismiss();
   };
 
@@ -64,6 +82,10 @@ const HomeScreen: React.FunctionComponent = () => {
               device={device}
               frameProcessor={frameProcessor}
               frameProcessorFps={5}
+              onError={error => {
+                console.log(error);
+                Alert.alert('An error occur while reading the QR Code.');
+              }}
             />
           </View>
         </View>
