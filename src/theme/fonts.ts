@@ -25,6 +25,7 @@ export const fontStyle = StyleSheet.create({
   },
   body: {
     fontSize: 20,
+    lineHeight: 23,
   },
   caption: {
     fontSize: 15,

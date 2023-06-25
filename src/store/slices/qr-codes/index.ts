@@ -5,13 +5,15 @@ import {QrCode, QrCodesState} from './types';
 // Define the initial state using that type
 const initialState: QrCodesState = {
   qrCodeList: [],
+  idCounter: 1,
 };
 
 const addQrCode: CaseReducer<QrCodesState, PayloadAction<QrCode>> = (
   state,
   action,
 ) => {
-  state.qrCodeList.push(action.payload);
+  state.qrCodeList.push({...action.payload, id: state.idCounter});
+  state.idCounter += 1;
 };
 
 const removeQrCode: CaseReducer<QrCodesState, PayloadAction<QrCode>> = (
@@ -19,7 +21,7 @@ const removeQrCode: CaseReducer<QrCodesState, PayloadAction<QrCode>> = (
   action,
 ) => {
   state.qrCodeList = state.qrCodeList.filter(
-    qrCode => qrCode !== action.payload,
+    qrCode => qrCode.id !== action.payload.id,
   );
 };
 

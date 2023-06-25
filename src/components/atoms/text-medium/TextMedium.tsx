@@ -7,7 +7,7 @@ const TextMedium: React.FunctionComponent<TextMediumProps> = props => {
   const {style, onLayout} = props;
 
   return (
-    <Text onLayout={onLayout} style={[styles.text, style]}>
+    <Text {...props} onLayout={onLayout} style={[styles.text, style]}>
       {props.children}
     </Text>
   );
