@@ -13,8 +13,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-QrCodeReaderApp-QrCodeReaderAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-QrCodeReaderApp-QrCodeReaderAppTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B99BC0672A484D5A002D9C37 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99BC0662A48496A002D9C37 /* FontAwesome.ttf */; };
+		B9EBAA4D2A4B8D580079FE15 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9EBAA4C2A4B8D580079FE15 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,9 @@
 		5709B34CF0A7D63546082F79 /* Pods-QrCodeReaderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeReaderApp.release.xcconfig"; path = "Target Support Files/Pods-QrCodeReaderApp/Pods-QrCodeReaderApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-QrCodeReaderApp-QrCodeReaderAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeReaderApp-QrCodeReaderAppTests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeReaderApp-QrCodeReaderAppTests/Pods-QrCodeReaderApp-QrCodeReaderAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-QrCodeReaderApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QrCodeReaderApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = QrCodeReaderApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-QrCodeReaderApp-QrCodeReaderAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeReaderApp-QrCodeReaderAppTests.release.xcconfig"; path = "Target Support Files/Pods-QrCodeReaderApp-QrCodeReaderAppTests/Pods-QrCodeReaderApp-QrCodeReaderAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		B99BC0662A48496A002D9C37 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		B9EBAA4C2A4B8D580079FE15 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -93,8 +93,8 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				B9EBAA4C2A4B8D580079FE15 /* Launch Screen.storyboard */,
 			);
 			name = QrCodeReaderApp;
 			sourceTree = "<group>";
@@ -253,8 +253,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9EBAA4D2A4B8D580079FE15 /* Launch Screen.storyboard in Resources */,
 				B99BC0672A484D5A002D9C37 /* FontAwesome.ttf in Resources */,
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
