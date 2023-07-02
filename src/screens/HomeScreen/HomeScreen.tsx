@@ -1,6 +1,5 @@
-import {BottomSheetModal} from '@gorhom/bottom-sheet';
 import {useNavigation} from '@react-navigation/native';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Alert, Linking, View} from 'react-native';
 import {
   Camera,
@@ -14,6 +13,7 @@ import Title from '../../components/molecules/title/Title';
 import BottomSheet from '../../components/organisms/bottom-sheet/BottomSheet';
 import ScreenLayout from '../../components/organisms/screen-layout/ScreenLayout';
 import {useAppDispatch} from '../../hooks/hooks';
+import {CommonTabsContext} from '../../navigation/MainBottomTabs';
 import {qrCodesSlice} from '../../store/slices/qr-codes';
 import styles from './HomeScreen.style';
 
@@ -29,7 +29,7 @@ const HomeScreen: React.FunctionComponent = () => {
 
   const dispatch = useAppDispatch();
 
-  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+  const {bottomSheetModalRef} = useContext(CommonTabsContext);
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -63,6 +63,7 @@ const HomeScreen: React.FunctionComponent = () => {
     if (scannedData) {
       dispatch(
         qrCodesSlice.actions.addQrCode({
+          id: 0,
           qrCode: scannedData,
           date: new Date().toLocaleDateString('pt-PT'),
         }),
@@ -91,7 +92,7 @@ const HomeScreen: React.FunctionComponent = () => {
         </View>
       )}
       <BottomSheet
-        bottomSheetModalRef={bottomSheetModalRef}
+        bottomSheetModalRef={bottomSheetModalRef!}
         onCLose={() => setIsCameraActive(true)}>
         <Title>Scan Result</Title>
         <BodyText>{scannedData}</BodyText>
