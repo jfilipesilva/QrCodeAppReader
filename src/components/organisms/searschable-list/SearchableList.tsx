@@ -28,12 +28,18 @@ const SearchableList: React.FC<SearchableListProps> = props => {
 
   return (
     <>
-      <SearchFilterInput onChangeText={setSearchTerm} searchTerm={searchTerm} />
+      <SearchFilterInput
+        onChangeText={setSearchTerm}
+        searchTerm={searchTerm}
+        testID="search-input"
+      />
       <FlatList
+        testID="flat-list"
         data={listData}
         renderItem={item => {
           return (
             <ListItem
+              testID="list-item"
               item={item.item}
               onPress={() => onPressListItem(item.item)}
             />

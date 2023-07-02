@@ -7,9 +7,12 @@ import {styles} from './ListItem.styles';
 import {ListItemProps} from './ListItem.types';
 
 const ListItem: React.FC<ListItemProps> = props => {
-  const {item, onPress} = props;
+  const {item, onPress, testID} = props;
   return (
-    <TouchableOpacity style={styles.listItem} onPress={() => onPress(item)}>
+    <TouchableOpacity
+      style={styles.listItem}
+      onPress={() => onPress(item)}
+      testID={testID}>
       <TextMedium
         ellipsizeMode="tail"
         numberOfLines={1}

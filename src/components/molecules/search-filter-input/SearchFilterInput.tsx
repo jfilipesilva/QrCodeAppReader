@@ -9,10 +9,10 @@ import {SearchFilterInputProps} from './SearchFilterInput.types';
 const SearchFilterInput: React.FunctionComponent<
   SearchFilterInputProps
 > = props => {
-  const {onChangeText, searchTerm} = props;
+  const {onChangeText, searchTerm, testID} = props;
 
   return (
-    <View style={styles.inputContainer}>
+    <View style={styles.inputContainer} testID={testID}>
       <View style={styles.iconContainer}>
         <FontAwesome name="search" size={20} color={colors.BORDER_GREY} />
       </View>

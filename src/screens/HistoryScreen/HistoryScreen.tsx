@@ -19,27 +19,8 @@ const HistoryScreen: React.FunctionComponent = () => {
   const [qrCodeSelected, setQrCodeSelected] = useState<QrCode | undefined>(
     undefined,
   );
-  // const [searchTerm, setSearchTerm] = useState<string | undefined>(undefined);
-
-  // const [listData, setListData] = useState<QrCode[] | undefined>(qrCodeList);
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-
-  // useEffect(() => {
-  //   setListData(qrCodeList);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
-  // useEffect(() => {
-  //   setListData(qrCodeList);
-  //   if (searchTerm) {
-  //     const filteredListData = qrCodeList?.filter(item =>
-  //       item.qrCode.toLowerCase().includes(searchTerm.toLocaleLowerCase()),
-  //     );
-  //     setListData(filteredListData);
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [searchTerm, qrCodeList]);
 
   const onPressButton = () => {
     if (qrCodeSelected) {
