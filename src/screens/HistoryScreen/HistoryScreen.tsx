@@ -6,7 +6,7 @@ import Subtitle from '../../components/molecules/subtitle/Subtitle';
 import Title from '../../components/molecules/title/Title';
 import BottomSheet from '../../components/organisms/bottom-sheet/BottomSheet';
 import ScreenLayout from '../../components/organisms/screen-layout/ScreenLayout';
-import SearchableList from '../../components/organisms/searschable-list/SearchableList';
+import SearchableList from '../../components/organisms/searchable-list/SearchableList';
 import {useAppDispatch, useAppSelector} from '../../hooks/hooks';
 import {qrCodesSlice} from '../../store/slices/qr-codes';
 import {QrCode} from '../../store/slices/qr-codes/types';

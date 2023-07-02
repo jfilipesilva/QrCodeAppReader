@@ -1,7 +1,7 @@
 import '@testing-library/jest-native/extend-expect';
 import {fireEvent, render} from '@testing-library/react-native';
 import React from 'react';
-import SearchableList from '../src/components/organisms/searschable-list/SearchableList';
+import SearchableList from '../src/components/organisms/searchable-list/SearchableList';
 import {QrCode} from '../src/store/slices/qr-codes/types';
 
 const date = new Date().toLocaleString('pt-PT');
