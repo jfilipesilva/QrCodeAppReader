@@ -1,4 +1,5 @@
-import React, {useContext, useState} from 'react';
+import {BottomSheetModal} from '@gorhom/bottom-sheet';
+import React, {useRef, useState} from 'react';
 import BodyText from '../../components/molecules/body-text/BodyText';
 import Button from '../../components/molecules/button/Button';
 import Subtitle from '../../components/molecules/subtitle/Subtitle';
@@ -7,7 +8,6 @@ import BottomSheet from '../../components/organisms/bottom-sheet/BottomSheet';
 import ScreenLayout from '../../components/organisms/screen-layout/ScreenLayout';
 import SearchableList from '../../components/organisms/searschable-list/SearchableList';
 import {useAppDispatch, useAppSelector} from '../../hooks/hooks';
-import {CommonTabsContext} from '../../navigation/MainBottomTabs';
 import {qrCodesSlice} from '../../store/slices/qr-codes';
 import {QrCode} from '../../store/slices/qr-codes/types';
 import styles from './HistoryScreen.style';
@@ -23,7 +23,7 @@ const HistoryScreen: React.FunctionComponent = () => {
 
   // const [listData, setListData] = useState<QrCode[] | undefined>(qrCodeList);
 
-  const {bottomSheetModalRef} = useContext(CommonTabsContext);
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
   // useEffect(() => {
   //   setListData(qrCodeList);
