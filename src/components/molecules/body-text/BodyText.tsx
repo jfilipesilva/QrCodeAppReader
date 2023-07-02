@@ -1,16 +1,19 @@
 import React from 'react';
-import {View} from 'react-native';
+import {StyleProp, TextStyle, View} from 'react-native';
 import TextMedium from '../../atoms/text-medium/TextMedium';
 import {styles} from './BodyText.styles';
 import {BodyTextProps} from './BodyText.types';
 
 const BodyText: React.FunctionComponent<BodyTextProps> = props => {
   const {textStyle, bodyTextContainerStyle} = props;
+
+  const mergedStyle: StyleProp<TextStyle> = textStyle
+    ? [styles.bodyText, textStyle]
+    : styles.bodyText;
+
   return (
-    <View style={bodyTextContainerStyle}>
-      <TextMedium style={[styles.bodyText, textStyle]}>
-        {props.children}
-      </TextMedium>
+    <View style={bodyTextContainerStyle} testID="body-text-container">
+      <TextMedium style={mergedStyle}>{props.children}</TextMedium>
     </View>
   );
 };

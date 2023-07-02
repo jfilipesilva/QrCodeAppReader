@@ -4,6 +4,10 @@ import TextBold from '../src/components/atoms/text-bold/TextBold';
 import {colors} from '../src/theme/colors';
 
 describe('<TextBold />', () => {
+  it('renders without errors', () => {
+    render(<TextBold>Test Text</TextBold>);
+  });
+
   it('renders the correct text', () => {
     const {getByText} = render(<TextBold>Hello World</TextBold>);
     const textElement = getByText('Hello World');

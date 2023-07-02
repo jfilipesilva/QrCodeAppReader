@@ -1,9 +1,14 @@
 import {render} from '@testing-library/react-native';
 import React from 'react';
+import TextBold from '../src/components/atoms/text-bold/TextBold';
 import TextRegular from '../src/components/atoms/text-regular/TextRegular';
 import {colors} from '../src/theme/colors';
 
 describe('<TextRegular />', () => {
+  it('renders without errors', () => {
+    render(<TextBold>Test Text</TextBold>);
+  });
+
   it('renders the correct text', () => {
     const {getByText} = render(<TextRegular>Hello World</TextRegular>);
     const textElement = getByText('Hello World');
