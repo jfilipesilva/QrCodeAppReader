@@ -6,9 +6,14 @@ import {SubtitleProps} from './Subtitle.types';
 
 const Subtitle: React.FunctionComponent<SubtitleProps> = props => {
   const {textStyle, subtitleContainerStyle} = props;
+
+  const mergedStyle = textStyle
+    ? [styles.subtitle, textStyle]
+    : styles.subtitle;
+
   return (
-    <View style={subtitleContainerStyle}>
-      <TextBold style={[styles.subtitle, textStyle]}>{props.children}</TextBold>
+    <View style={subtitleContainerStyle} testID="subtitle-container">
+      <TextBold style={mergedStyle}>{props.children}</TextBold>
     </View>
   );
 };
