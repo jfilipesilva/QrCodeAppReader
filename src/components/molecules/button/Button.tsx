@@ -8,6 +8,7 @@ const Button: React.FunctionComponent<ButtonProps> = props => {
   const {textStyle, buttonContainerStyle, onPress, children} = props;
   return (
     <TouchableOpacity
+      testID="button"
       style={[styles.button, buttonContainerStyle]}
       onPress={onPress}>
       <TextBold style={[styles.buttonText, textStyle]}>{children}</TextBold>
