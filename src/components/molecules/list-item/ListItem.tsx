@@ -20,6 +20,7 @@ const ListItem: React.FC<ListItemProps> = props => {
         {item.qrCode}
       </TextMedium>
       <FontAwesome
+        testID="list-item-icon"
         name={'chevron-right'}
         style={styles.listItemIcon}
         color={colors.BORDER_GREY}
