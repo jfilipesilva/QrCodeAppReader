@@ -6,8 +6,10 @@ import {TextBoldProps} from './TextBold.types';
 const TextBold: React.FunctionComponent<TextBoldProps> = props => {
   const {style} = props;
 
+  const mergedStyle = style ? [styles.text, style] : styles.text;
+
   return (
-    <Text {...props} style={[styles.text, style]}>
+    <Text {...props} style={mergedStyle}>
       {props.children}
     </Text>
   );

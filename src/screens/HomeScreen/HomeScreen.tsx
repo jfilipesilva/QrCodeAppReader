@@ -63,6 +63,7 @@ const HomeScreen: React.FunctionComponent = () => {
     if (scannedData) {
       dispatch(
         qrCodesSlice.actions.addQrCode({
+          id: 0,
           qrCode: scannedData,
           date: new Date().toLocaleDateString('pt-PT'),
         }),

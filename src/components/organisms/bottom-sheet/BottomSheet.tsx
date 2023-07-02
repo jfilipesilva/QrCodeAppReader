@@ -9,12 +9,10 @@ import {BottomSheetProps} from './BottomSheet.types';
 const BottomSheet: React.FunctionComponent<BottomSheetProps> = props => {
   const {bottomSheetModalRef, children, onCLose} = props;
 
-  // variables
   const snapPoints = useMemo(() => ['40%', '60%', '80%'], []);
 
   const insets = useSafeAreaInsets();
 
-  // renders
   return (
     <BottomSheetModalProvider>
       <BottomSheetModal
