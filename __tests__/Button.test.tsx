@@ -3,7 +3,11 @@ import React from 'react';
 import Button from '../src/components/molecules/button/Button';
 import {colors} from '../src/theme/colors';
 
-describe('Button', () => {
+describe('Button component unit tests', () => {
+  it('renders correctly', () => {
+    render(<Button>Hello World</Button>);
+  });
+
   it('renders children correctly', () => {
     const {getByText} = render(<Button>Hello World</Button>);
     const buttonText = getByText('Hello World');

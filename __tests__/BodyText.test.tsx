@@ -6,8 +6,8 @@ import BodyText from '../src/components/molecules/body-text/BodyText';
 import {styles} from '../src/components/molecules/body-text/BodyText.styles';
 import {colors} from '../src/theme/colors';
 
-describe('<BodyText />', () => {
-  it('renders without errors', () => {
+describe('BodyText component unit tests', () => {
+  it('renders correctly', () => {
     render(<BodyText>Test Text</BodyText>);
   });
 

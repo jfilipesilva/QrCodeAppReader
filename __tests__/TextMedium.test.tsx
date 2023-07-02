@@ -4,8 +4,8 @@ import TextMedium from '../src/components/atoms/text-medium/TextMedium';
 import {colors} from '../src/theme/colors';
 import TextBold from '../src/components/atoms/text-bold/TextBold';
 
-describe('<TextMedium />', () => {
-  it('renders without errors', () => {
+describe('TextMedium component unit tests', () => {
+  it('renders correctly', () => {
     render(<TextBold>Test Text</TextBold>);
   });
 

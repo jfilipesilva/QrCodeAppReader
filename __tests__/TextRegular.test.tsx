@@ -4,8 +4,8 @@ import TextBold from '../src/components/atoms/text-bold/TextBold';
 import TextRegular from '../src/components/atoms/text-regular/TextRegular';
 import {colors} from '../src/theme/colors';
 
-describe('<TextRegular />', () => {
-  it('renders without errors', () => {
+describe('TextRegular component unit tests', () => {
+  it('renders correctly', () => {
     render(<TextBold>Test Text</TextBold>);
   });
 

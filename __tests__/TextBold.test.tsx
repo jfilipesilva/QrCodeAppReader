@@ -3,8 +3,8 @@ import React from 'react';
 import TextBold from '../src/components/atoms/text-bold/TextBold';
 import {colors} from '../src/theme/colors';
 
-describe('<TextBold />', () => {
-  it('renders without errors', () => {
+describe('TextBold component unit tests', () => {
+  it('renders correctly', () => {
     render(<TextBold>Test Text</TextBold>);
   });
 
