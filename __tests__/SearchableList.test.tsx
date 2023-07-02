@@ -11,6 +11,9 @@ const mockData: QrCode[] = [
   {qrCode: 'QRVALUE3', date, id: 3},
 ];
 const mockOnPressListItem = jest.fn();
+const mockListId = 'flat-list';
+const mockItemListId = 'list-item';
+const mockSearchInputId = 'search-input';
 
 describe('SearchableList component unit tests', () => {
   it('renders the component correctly', () => {
@@ -18,8 +21,8 @@ describe('SearchableList component unit tests', () => {
       <SearchableList data={mockData} onPressListItem={mockOnPressListItem} />,
     );
 
-    expect(getByTestId('search-input')).toBeTruthy();
-    expect(getByTestId('flat-list')).toBeTruthy();
+    expect(getByTestId(mockSearchInputId)).toBeTruthy();
+    expect(getByTestId(mockListId)).toBeTruthy();
   });
 
   it('displays the correct items based on search term', () => {
@@ -27,10 +30,10 @@ describe('SearchableList component unit tests', () => {
       <SearchableList data={mockData} onPressListItem={mockOnPressListItem} />,
     );
 
-    const searchInput = getByTestId('search-input');
+    const searchInput = getByTestId(mockSearchInputId);
     fireEvent.changeText(searchInput, 'VALUE2');
 
-    const listItems = getAllByTestId('list-item');
+    const listItems = getAllByTestId(mockItemListId);
     expect(listItems.length).toBe(1);
     expect(listItems[0]).toHaveTextContent('VALUE2');
   });
@@ -40,7 +43,7 @@ describe('SearchableList component unit tests', () => {
       <SearchableList data={mockData} onPressListItem={mockOnPressListItem} />,
     );
 
-    const listItems = getAllByTestId('list-item');
+    const listItems = getAllByTestId(mockItemListId);
     fireEvent.press(listItems[0]);
     expect(mockOnPressListItem).toHaveBeenCalledWith(mockData[0]);
   });
