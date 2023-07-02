@@ -6,9 +6,15 @@ import {TitleProps} from './Title.types';
 
 const Title: React.FunctionComponent<TitleProps> = props => {
   const {textStyle, titleContainerStyle} = props;
+  const mergedStyle = titleContainerStyle
+    ? [styles.mainContainer, titleContainerStyle]
+    : styles.mainContainer;
+
+  const mergedTextStyle = textStyle ? [styles.title, textStyle] : styles.title;
+
   return (
-    <View style={[styles.mainContainer, titleContainerStyle]}>
-      <TextBold style={[styles.title, textStyle]}>{props.children}</TextBold>
+    <View style={mergedStyle} testID="title-container">
+      <TextBold style={mergedTextStyle}>{props.children}</TextBold>
     </View>
   );
 };

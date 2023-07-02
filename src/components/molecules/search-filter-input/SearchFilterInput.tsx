@@ -18,7 +18,7 @@ const SearchFilterInput: React.FunctionComponent<
       </View>
       <TextInput
         style={styles.input}
-        value={searchTerm}
+        value={searchTerm ?? ''}
         placeholder="Search"
         placeholderTextColor={colors.TEXT_GREY}
         onChangeText={value => onChangeText(value)}
