@@ -14,7 +14,9 @@ const ScreenLayout: React.FunctionComponent<ScreenLayoutProps> = props => {
         barStyle={'dark-content'}
         translucent={true}
       />
-      <Title textStyle={styles.titleText}>{title}</Title>
+      <View style={styles.titleContainer}>
+        <Title textStyle={styles.titleText}>{title}</Title>
+      </View>
       {children}
     </View>
   );

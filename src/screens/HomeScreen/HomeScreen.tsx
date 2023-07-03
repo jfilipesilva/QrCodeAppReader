@@ -73,7 +73,7 @@ const HomeScreen: React.FunctionComponent = () => {
   };
 
   return (
-    <ScreenLayout title="Qr Code Reader">
+    <ScreenLayout title="Scan">
       {device && cameraPermissionStatus === 'authorized' && (
         <View style={styles.mainContainer}>
           <View style={styles.cameraContainer}>

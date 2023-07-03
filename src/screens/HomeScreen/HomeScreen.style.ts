@@ -4,9 +4,10 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     justifyContent: 'center',
+    marginBottom: 20,
   },
   cameraContainer: {
-    height: Dimensions.get('window').height * 0.6,
+    height: Dimensions.get('window').height * 0.5,
     width: Dimensions.get('window').width * 0.9,
     borderRadius: 50,
     overflow: 'hidden',
