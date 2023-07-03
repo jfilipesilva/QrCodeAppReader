@@ -7,6 +7,11 @@ export const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: colors.BG_WHITE,
   },
+  titleContainer: {
+    borderBottomWidth: 1,
+    borderBottomColor: colors.BORDER_GREY,
+    marginBottom: 20,
+  },
   titleText: {
     textAlign: 'center',
   },

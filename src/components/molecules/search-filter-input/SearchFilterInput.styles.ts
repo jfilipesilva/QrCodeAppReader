@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderWidth: 1,
     borderColor: colors.BORDER_GREY,
-    borderRadius: 8,
+    borderRadius: 100,
   },
   iconContainer: {
     marginLeft: 10,

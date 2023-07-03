@@ -19,7 +19,8 @@ const BottomSheet: React.FunctionComponent<BottomSheetProps> = props => {
         ref={bottomSheetModalRef}
         index={1}
         snapPoints={snapPoints}
-        style={{padding: 20}}
+        backgroundStyle={styles.modalBackground}
+        style={styles.modalContainer}
         onDismiss={onCLose}>
         <ScrollView bounces={false}>
           <View
