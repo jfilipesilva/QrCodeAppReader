@@ -14,7 +14,7 @@ import {PersistGate} from 'redux-persist/lib/integration/react';
 import MainBottomTabs from './src/navigation/MainBottomTabs';
 import {persister, store} from './src/store/store';
 
-const App: React.FunctionComponent = () => {
+export const App: React.FunctionComponent = () => {
   useEffect(() => {
     if (Platform.OS === 'android') {
       NativeModules.SplashScreenModule.hide();
@@ -42,4 +42,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+// export default App;
+export {default} from './.storybook';
