@@ -39,7 +39,13 @@ git clone https://github.com/jfilipesilva/QrCodeAppReader.git
 yarn install
 ```
 
-3. Run the application in development mode
+3. Start metro
+
+```sh
+yarn start
+```
+
+4. Run the application in development mode
 
 - For iOS
 
