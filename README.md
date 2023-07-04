@@ -33,16 +33,10 @@ To get a local copy up and running, follow these steps:
 git clone https://github.com/jfilipesilva/QrCodeAppReader.git
 ```
 
-2. Install NPM packages
+2. Install dependencies
 
 ```sh
 yarn install
-```
-
-or
-
-```sh
-npm install
 ```
 
 3. Run the application in development mode
