@@ -1,6 +1,6 @@
 # QR Code Reader App
 
-This project is a QR Code Reader mobile application built with React Native, TypeScript, and Redux Saga.
+This project is a QR Code Reader mobile application built with React Native, TypeScript, and Redux.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ This project is a QR Code Reader mobile application built with React Native, Typ
 
 ## About
 
-QR Code Reader App is a mobile application that is designed to read QR codes quickly and accurately. The application is built with React Native and TypeScript, utilizing Redux Saga for state management.
+QR Code Reader App is a mobile application that is designed to read QR codes quickly and accurately. The application is built with React Native and TypeScript, utilizing Redux for state management.
 
 This application can be used to scan any QR code, providing a convenient way to access information embedded within QR codes.
 
