@@ -7,6 +7,7 @@ import {BodyTextProps} from './BodyText.types';
 const BodyText: React.FunctionComponent<BodyTextProps> = props => {
   const {textStyle, bodyTextContainerStyle} = props;
 
+  // Uses the default style if no `textStyle` is passed
   const mergedStyle: StyleProp<TextStyle> = textStyle
     ? [styles.bodyText, textStyle]
     : styles.bodyText;

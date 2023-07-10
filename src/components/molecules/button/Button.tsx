@@ -6,6 +6,7 @@ import {ButtonProps} from './Button.types';
 
 const Button: React.FunctionComponent<ButtonProps> = props => {
   const {textStyle, buttonContainerStyle, onPress, children} = props;
+
   return (
     <TouchableOpacity
       testID="button"
