@@ -29,9 +29,10 @@ const HomeScreen: React.FunctionComponent = () => {
     checkInverted: true,
   });
 
+  // Uses `useAppDispatch` hook to get the dispatch function from the Redux store
   const dispatch = useAppDispatch();
 
-  // This ref will be used to reference the `BottomSheetModal` component in the code.
+  // This ref will be used to reference the `BottomSheetModal` component in the code
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
   const navigation = useNavigation();
@@ -57,7 +58,7 @@ const HomeScreen: React.FunctionComponent = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // The bottom sheet is triggered whenever a new QRCode is read.
+  // The bottom sheet is activated whenever a new QR code is scanned
   useEffect(() => {
     if (barcodes.length > 0) {
       setScannedData(barcodes[0].displayValue); // get the value of the first barcode
