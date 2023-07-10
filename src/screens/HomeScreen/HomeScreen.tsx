@@ -18,36 +18,46 @@ import {qrCodesSlice} from '../../store/slices/qr-codes';
 import styles from './HomeScreen.style';
 
 const HomeScreen: React.FunctionComponent = () => {
+  // States
   const [cameraPermissionStatus, setCameraPermissionStatus] =
     useState<CameraPermissionStatus>('not-determined');
   const [scannedData, setScannedData] = useState<string | undefined>(undefined);
   const [isCameraActive, setIsCameraActive] = useState<boolean>(true);
 
+  // `useScanBarcodes` hook from the `vision-camera-code-scanner` library to scan QR codes.
   const [frameProcessor, barcodes] = useScanBarcodes([BarcodeFormat.QR_CODE], {
     checkInverted: true,
   });
 
   const dispatch = useAppDispatch();
 
+  // This ref will be used to reference the `BottomSheetModal` component in the code.
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+
   const navigation = useNavigation();
 
   useEffect(() => {
+    // Request permission to access the device's camera. */
     Camera.requestCameraPermission().then(async permission => {
       if (permission === 'denied') {
         await Linking.openSettings();
       }
       setCameraPermissionStatus(permission);
     });
+
+    // Activates the camera every time this screen is visible
     navigation.addListener('focus', () => {
       setIsCameraActive(true);
     });
+
+    // Deactivate the camera every time this screen is not visible to save battery and to stop unnecessary qr code reading
     navigation.addListener('blur', () => {
       setIsCameraActive(false);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // The bottom sheet is triggered whenever a new QRCode is read.
   useEffect(() => {
     if (barcodes.length > 0) {
       setScannedData(barcodes[0].displayValue); // get the value of the first barcode
@@ -56,9 +66,11 @@ const HomeScreen: React.FunctionComponent = () => {
     }
   }, [barcodes]);
 
+  // Setting the App to use the back camera
   const devices = useCameraDevices();
   const device = devices.back;
 
+  // Save QRCode in Redux and dismisses the bottom sheet modal.
   const onPressButton = () => {
     if (scannedData) {
       dispatch(
@@ -72,6 +84,7 @@ const HomeScreen: React.FunctionComponent = () => {
     bottomSheetModalRef.current?.dismiss();
   };
 
+  // Renders HomeScreen layout
   return (
     <ScreenLayout title="Scan">
       {device && cameraPermissionStatus === 'authorized' && (
