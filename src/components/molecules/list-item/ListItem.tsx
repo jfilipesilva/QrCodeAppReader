@@ -8,6 +8,7 @@ import {ListItemProps} from './ListItem.types';
 
 const ListItem: React.FC<ListItemProps> = props => {
   const {item, onPress, testID} = props;
+
   return (
     <TouchableOpacity
       style={styles.listItem}

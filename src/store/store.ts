@@ -3,16 +3,21 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {persistReducer, persistStore} from 'redux-persist';
 import {qrCodesSlice} from './slices/qr-codes';
 
+// Reducers
 const rootReducer = combineReducers({
   [qrCodesSlice.name]: qrCodesSlice.reducer,
 });
 
+/* Configuration for Redux persist. */
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
 };
+
+// Create a persisted version of the root reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+// Redux configuration
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware =>

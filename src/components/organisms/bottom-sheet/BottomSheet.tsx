@@ -9,8 +9,11 @@ import {BottomSheetProps} from './BottomSheet.types';
 const BottomSheet: React.FunctionComponent<BottomSheetProps> = props => {
   const {bottomSheetModalRef, children, onCLose} = props;
 
+  // Snap points for the bottom sheet
   const snapPoints = useMemo(() => ['40%', '60%', '80%'], []);
 
+  /* Returns the safe area insets for the current device, which represents the area of the
+  screen that is not covered by system UI elements such as the status bar, navigation bar, or notch. */
   const insets = useSafeAreaInsets();
 
   return (

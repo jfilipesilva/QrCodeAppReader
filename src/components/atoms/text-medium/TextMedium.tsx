@@ -4,14 +4,15 @@ import {styles} from './TextMedium.styles';
 import {TextMediumProps} from './TextMedium.types';
 
 const TextMedium: React.FunctionComponent<TextMediumProps> = props => {
-  const {style, onLayout} = props;
+  const {style} = props;
 
+  // Uses the default style if no `style` is passed
   const mergedStyle: StyleProp<TextStyle> = style
     ? [styles.text, style]
     : styles.text;
 
   return (
-    <Text {...props} onLayout={onLayout} style={mergedStyle}>
+    <Text {...props} style={mergedStyle}>
       {props.children}
     </Text>
   );
