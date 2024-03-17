@@ -1,13 +1,13 @@
 import {BottomSheetModal} from '@gorhom/bottom-sheet';
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useRef, useState} from 'react';
-import {Alert, Linking, View} from 'react-native';
+import {Alert, View} from 'react-native';
 import {
   Camera,
-  CameraPermissionStatus,
-  useCameraDevices,
+  useCameraDevice,
+  useCameraPermission,
+  useCodeScanner,
 } from 'react-native-vision-camera';
-import {BarcodeFormat, useScanBarcodes} from 'vision-camera-code-scanner';
 import BodyText from '../../components/molecules/body-text/BodyText';
 import Button from '../../components/molecules/button/Button';
 import Title from '../../components/molecules/title/Title';
@@ -19,14 +19,19 @@ import styles from './HomeScreen.style';
 
 const HomeScreen: React.FunctionComponent = () => {
   // States
-  const [cameraPermissionStatus, setCameraPermissionStatus] =
-    useState<CameraPermissionStatus>('not-determined');
   const [scannedData, setScannedData] = useState<string | undefined>(undefined);
   const [isCameraActive, setIsCameraActive] = useState<boolean>(true);
+  const {hasPermission, requestPermission} = useCameraPermission();
 
-  // `useScanBarcodes` hook from the `vision-camera-code-scanner` library to scan QR codes.
-  const [frameProcessor, barcodes] = useScanBarcodes([BarcodeFormat.QR_CODE], {
-    checkInverted: true,
+  const codeScanner = useCodeScanner({
+    codeTypes: ['qr', 'ean-13'],
+    onCodeScanned: codes => {
+      if (codes.length > 0) {
+        setIsCameraActive(false);
+        setScannedData(codes[0].value); // get the value of the first barcode
+        bottomSheetModalRef.current?.present();
+      }
+    },
   });
 
   // Uses `useAppDispatch` hook to get the dispatch function from the Redux store
@@ -39,12 +44,7 @@ const HomeScreen: React.FunctionComponent = () => {
 
   useEffect(() => {
     // Request permission to access the device's camera. */
-    Camera.requestCameraPermission().then(async permission => {
-      if (permission === 'denied') {
-        await Linking.openSettings();
-      }
-      setCameraPermissionStatus(permission);
-    });
+    requestPermission();
 
     // Activates the camera every time this screen is visible
     navigation.addListener('focus', () => {
@@ -58,18 +58,8 @@ const HomeScreen: React.FunctionComponent = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // The bottom sheet is activated whenever a new QR code is scanned
-  useEffect(() => {
-    if (barcodes.length > 0) {
-      setScannedData(barcodes[0].displayValue); // get the value of the first barcode
-      setIsCameraActive(false);
-      bottomSheetModalRef.current?.present();
-    }
-  }, [barcodes]);
-
   // Setting the App to use the back camera
-  const devices = useCameraDevices();
-  const device = devices.back;
+  const device = useCameraDevice('back');
 
   // Save QRCode in Redux and dismisses the bottom sheet modal.
   const onPressButton = () => {
@@ -88,15 +78,14 @@ const HomeScreen: React.FunctionComponent = () => {
   // Renders HomeScreen layout
   return (
     <ScreenLayout title="Scan">
-      {device && cameraPermissionStatus === 'authorized' && (
+      {device && hasPermission && (
         <View style={styles.mainContainer}>
           <View style={styles.cameraContainer}>
             <Camera
               style={styles.camera}
               isActive={isCameraActive}
+              codeScanner={codeScanner}
               device={device}
-              frameProcessor={frameProcessor}
-              frameProcessorFps={5}
               onError={error => {
                 console.log(error);
                 Alert.alert('An error occur while reading the QR Code.');
