@@ -14,7 +14,7 @@
 		7B555AE338517EADC88AC092 /* libPods-QrCodeReaderApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 639277FE9265EE0C62B4133A /* libPods-QrCodeReaderApp.a */; };
 		9F754DCA1FACB315547EECFB /* libPods-QrCodeReaderApp-QrCodeReaderAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C11658CF91A0C0DBA6F5695 /* libPods-QrCodeReaderApp-QrCodeReaderAppTests.a */; };
 		B99BC0672A484D5A002D9C37 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99BC0662A48496A002D9C37 /* FontAwesome.ttf */; };
-		B9EBAA4D2A4B8D580079FE15 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9EBAA4C2A4B8D580079FE15 /* Launch Screen.storyboard */; };
+		B9A10BEB2BB5A4BD00E9FA95 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A10BEA2BB5A4BD00E9FA95 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		7C11658CF91A0C0DBA6F5695 /* libPods-QrCodeReaderApp-QrCodeReaderAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QrCodeReaderApp-QrCodeReaderAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76F45ACC7351D3CB7D71D8E /* Pods-QrCodeReaderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeReaderApp.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeReaderApp/Pods-QrCodeReaderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B99BC0662A48496A002D9C37 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		B9EBAA4C2A4B8D580079FE15 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		B9A10BEA2BB5A4BD00E9FA95 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F5565388FFBA2BDB690C1B1C /* Pods-QrCodeReaderApp-QrCodeReaderAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrCodeReaderApp-QrCodeReaderAppTests.debug.xcconfig"; path = "Target Support Files/Pods-QrCodeReaderApp-QrCodeReaderAppTests/Pods-QrCodeReaderApp-QrCodeReaderAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +94,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				B9EBAA4C2A4B8D580079FE15 /* Launch Screen.storyboard */,
+				B9A10BEA2BB5A4BD00E9FA95 /* Launch Screen.storyboard */,
 			);
 			name = QrCodeReaderApp;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9EBAA4D2A4B8D580079FE15 /* Launch Screen.storyboard in Resources */,
+				B9A10BEB2BB5A4BD00E9FA95 /* Launch Screen.storyboard in Resources */,
 				B99BC0672A484D5A002D9C37 /* FontAwesome.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
