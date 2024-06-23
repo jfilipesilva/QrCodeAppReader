@@ -21,7 +21,7 @@
 
     <!-- Layer 2: Logo or any other content -->
     <ImageView
-        android:layout_width="208dp"
+        android:layout_width="308dp"
         android:layout_height="130dp"
         android:layout_centerInParent="true"
         android:src="@drawable/logo" />
